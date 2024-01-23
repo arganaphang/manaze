@@ -18,7 +18,7 @@ class Application extends StatelessWidget {
           titleTextStyle: TextStyle(color: baseTheme.hintColor, fontSize: 12),
           iconTheme: IconThemeData(color: baseTheme.hintColor, size: 18),
         ),
-        textTheme: GoogleFonts.josefinSansTextTheme(baseTheme.textTheme),
+        textTheme: GoogleFonts.latoTextTheme(baseTheme.textTheme),
         scaffoldBackgroundColor: const Color.fromARGB(255, 250, 250, 250),
       ),
       initialRoute: HomeScreen.routeName,
