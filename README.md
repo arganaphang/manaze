@@ -14,7 +14,7 @@ Dependencies-nya liat `pubspec.yaml` aja lah ya :)
 
 ## FAQ?
 
-- Where is testing? (Unit Test, UI Test, Integration Test)
+- Where is test code? (Unit Test, UI Test, Integration Test)
   > Real men test in _**Production**_
 - Nambah fitur gimana bang Messi?
 
