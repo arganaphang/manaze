@@ -1,0 +1,11 @@
+- [ ] (Setting) Color picker for color scheme
+- [ ] (Setting) Switch dark/light mode
+- [ ] (Setting) Export to CSV
+- [ ] (List) Filter this month only
+- [ ] (List) Add link to `All` screen
+- [ ] (Chart) Add chart `Income` & `Expense`
+- [ ] (Chart) Add month filter
+- [ ] (All) Create new Screen
+- [ ] (All) Add list Transaction sort by newest
+- [ ] (All) Add search by title
+- [ ] (All) Add filter (month, week, time-range)

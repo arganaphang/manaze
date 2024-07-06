@@ -10,7 +10,14 @@ class ChartScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Center(
-      child: Text("Chart Screen"),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text("Chart Screen"),
+          SizedBox(height: 4),
+          Text("(Under Development ☺️)")
+        ],
+      ),
     );
   }
 }
