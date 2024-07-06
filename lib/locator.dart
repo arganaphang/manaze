@@ -26,5 +26,5 @@ Future<void> locator() async {
     Get.find<TransactionService>(),
   ));
 
-  await seed();
+  await seed(); // TODO: Remove This
 }
