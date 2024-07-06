@@ -1,8 +1,9 @@
-import 'package:eva_icons_flutter/eva_icons_flutter.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:manaze/application_controller.dart';
 import 'package:manaze/models/transaction.dart';
+import 'package:manaze/screens/create/create_screen.dart';
 import 'package:manaze/widgets/transaction_card.dart';
 
 import 'list_screen_controller.dart';
@@ -10,7 +11,7 @@ import 'list_screen_controller.dart';
 class ListScreen extends StatelessWidget {
   ListScreen({super.key});
 
-  final applicationController = Get.find<ApplicationController>();
+  final appController = Get.find<ApplicationController>();
   final listScreenController = Get.put(ListScreenController());
 
   @override
@@ -34,19 +35,21 @@ class ListScreen extends StatelessWidget {
   }
 
   Widget _renderList(BuildContext ctx) {
-    return Expanded(
-      child: ListView.separated(
-        itemBuilder: (ctx, idx) {
-          return TransactionCard(
-            trx: applicationController.getTransactions()[idx],
-          );
-        },
-        separatorBuilder: (ctx, idx) {
-          return const SizedBox(height: 16);
-        },
-        itemCount: applicationController.getTransactions().length,
-      ),
-    );
+    return GetBuilder<ListScreenController>(builder: (c) {
+      return Obx(() => Expanded(
+            child: ListView.separated(
+              itemBuilder: (ctx, idx) {
+                return TransactionCard(
+                  trx: appController.transactions[idx],
+                );
+              },
+              separatorBuilder: (ctx, idx) {
+                return const SizedBox(height: 16);
+              },
+              itemCount: appController.transactions.length,
+            ),
+          ));
+    });
   }
 
   _renderTabs(BuildContext context) {
@@ -65,7 +68,12 @@ class ListScreen extends StatelessWidget {
                 itemBuilder: (ctx, idx) {
                   return GestureDetector(
                     onTap: () {
-                      controller.onTransactionTypeChange(tabs[idx].type);
+                      final value =
+                          tabs[idx].type == controller.transactionType.value
+                              ? null
+                              : tabs[idx].type;
+                      controller.onTransactionTypeChange(value);
+                      appController.updateTransactions(value);
                     },
                     child: Obx(
                       () => Container(
@@ -98,11 +106,13 @@ class ListScreen extends StatelessWidget {
         ),
         IconButton(
           icon: const Icon(
-            EvaIcons.plusCircleOutline,
+            CupertinoIcons.add_circled,
             color: Colors.black54,
             size: 32,
           ),
-          onPressed: () {},
+          onPressed: () {
+            Get.toNamed(CreateScreen.routeName);
+          },
         ),
       ],
     );

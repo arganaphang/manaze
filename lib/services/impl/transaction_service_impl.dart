@@ -26,8 +26,8 @@ class TransactionServiceImpl implements TransactionService {
   }
 
   @override
-  List<Transaction> getTransactions() {
-    return repo.getTransactions();
+  List<Transaction> getTransactions(TransactionType? type) {
+    return repo.getTransactions(type);
   }
 
   @override

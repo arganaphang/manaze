@@ -1,4 +1,4 @@
-import 'package:eva_icons_flutter/eva_icons_flutter.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:manaze/application_controller.dart';
@@ -22,18 +22,19 @@ class HomeScreen extends StatelessWidget {
         () => NavigationBar(
           backgroundColor: Colors.transparent,
           selectedIndex: homeController.selectedIndex.value,
+          indicatorColor: Colors.grey.shade200,
           onDestinationSelected: homeController.onChange,
           destinations: const [
             NavigationDestination(
-              icon: Icon(EvaIcons.homeOutline),
+              icon: Icon(CupertinoIcons.home),
               label: "Home",
             ),
             NavigationDestination(
-              icon: Icon(EvaIcons.pieChartOutline),
+              icon: Icon(CupertinoIcons.chart_bar_alt_fill),
               label: "Chart",
             ),
             NavigationDestination(
-              icon: Icon(EvaIcons.settingsOutline),
+              icon: Icon(CupertinoIcons.settings),
               label: "Setting",
             ),
           ],

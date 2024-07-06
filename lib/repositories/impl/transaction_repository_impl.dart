@@ -37,8 +37,10 @@ class TransactionRepositoryImpl implements TransactionRepository {
   }
 
   @override
-  List<Transaction> getTransactions() {
-    return database.values.toList();
+  List<Transaction> getTransactions(TransactionType? type) {
+    return database.values
+        .where((element) => type != null ? element.type == type : true)
+        .toList();
   }
 
   @override

@@ -6,16 +6,18 @@ import 'package:manaze/services/transaction_service.dart';
 class ApplicationController extends GetxController {
   final TransactionService transactionService;
 
+  final RxList<Transaction> transactions = <Transaction>[].obs;
+
   ApplicationController(this.transactionService);
 
-  List<Transaction> getTransactions() {
-    return transactionService.getTransactions();
+  void updateTransactions(TransactionType? type) {
+    transactions.value = transactionService.getTransactions(type);
   }
 
   @override
   onInit() {
     super.onInit();
-    debugPrint("hello from application controller");
+    transactions.value = transactionService.getTransactions(null);
   }
 
   @override

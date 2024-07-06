@@ -5,6 +5,6 @@ abstract class TransactionRepository {
   Future<Transaction> createTransaction(TransactionCreateDTO data);
   Future<void> deleteTransactionByID(int id);
   Transaction getTransactionByID(int id);
-  List<Transaction> getTransactions();
+  List<Transaction> getTransactions(TransactionType? type);
   Future<Transaction> updateTransactionByID(int id, TransactionUpdateDTO data);
 }
