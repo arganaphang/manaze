@@ -1,3 +1,4 @@
+- [ ] DELETE `await seed()` in `lib/locator.dart:29`
 - [ ] (Setting) Color picker for color scheme
 - [ ] (Setting) Switch dark/light mode
 - [ ] (Setting) Export to CSV
