@@ -20,14 +20,12 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       bottomNavigationBar: Obx(
         () => NavigationBar(
-          backgroundColor: Colors.transparent,
           selectedIndex: homeController.selectedIndex.value,
-          indicatorColor: Colors.grey.shade200,
           onDestinationSelected: homeController.onChange,
           destinations: const [
             NavigationDestination(
-              icon: Icon(CupertinoIcons.home),
-              label: "Home",
+              icon: Icon(CupertinoIcons.square_list),
+              label: "List",
             ),
             NavigationDestination(
               icon: Icon(CupertinoIcons.chart_bar_alt_fill),

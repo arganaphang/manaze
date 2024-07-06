@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:manaze/dto/transaction_dto.dart';
 import 'package:manaze/models/transaction.dart';
 import 'package:manaze/services/transaction_service.dart';
 
@@ -10,8 +11,13 @@ class ApplicationController extends GetxController {
 
   ApplicationController(this.transactionService);
 
-  void updateTransactions(TransactionType? type) {
+  void onUpdateTransactions(TransactionType? type) {
     transactions.value = transactionService.getTransactions(type);
+  }
+
+  void onAddTransaction(TransactionCreateDTO data) {
+    transactionService.createTransaction(data);
+    transactions.value = transactionService.getTransactions(null);
   }
 
   @override

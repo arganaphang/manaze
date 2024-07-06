@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:manaze/helpers/currency.dart';
+import 'package:manaze/helpers/date.dart';
 import 'package:manaze/models/transaction.dart';
 
 class TransactionCard extends StatelessWidget {
@@ -34,18 +36,32 @@ class TransactionCard extends StatelessWidget {
           const SizedBox(width: 12),
           Expanded(
             flex: 3,
-            child: Text(
-              trx.title,
-              maxLines: 1,
-              overflow: TextOverflow.ellipsis,
-              style: textTheme.bodyMedium,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  trx.title.isNotEmpty ? trx.title : '-',
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  style: textTheme.titleMedium,
+                ),
+                const SizedBox(height: 6),
+                Text(
+                  trx.createdAt.toHuman(),
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  style: textTheme.labelSmall?.copyWith(
+                    color: textTheme.labelSmall?.color?.withOpacity(.45),
+                  ),
+                ),
+              ],
             ),
           ),
           const SizedBox(width: 8),
           Expanded(
-            flex: 1,
+            flex: 2,
             child: Text(
-              "Rp ${trx.amount}",
+              trx.amount.toHuman(),
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
               textAlign: TextAlign.right,

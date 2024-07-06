@@ -10,7 +10,14 @@ class SettingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Center(
-      child: Text("Setting Screen"),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text("Setting Screen"),
+          SizedBox(height: 4),
+          Text("(Under Development ☺️)")
+        ],
+      ),
     );
   }
 }

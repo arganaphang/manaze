@@ -9,17 +9,19 @@ class Application extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final baseTheme = ThemeData(brightness: Brightness.light);
+    final baseTheme = ThemeData(
+      brightness: Brightness.light,
+      colorSchemeSeed: const Color.fromARGB(255, 234, 221, 187),
+    );
     return GetMaterialApp(
       theme: baseTheme.copyWith(
+        useMaterial3: true,
         appBarTheme: baseTheme.appBarTheme.copyWith(
-          backgroundColor: const Color.fromARGB(255, 250, 250, 250),
           elevation: 0,
-          titleTextStyle: TextStyle(color: baseTheme.hintColor, fontSize: 12),
+          titleTextStyle: TextStyle(color: baseTheme.hintColor, fontSize: 18),
           iconTheme: IconThemeData(color: baseTheme.hintColor, size: 18),
         ),
         textTheme: GoogleFonts.latoTextTheme(baseTheme.textTheme),
-        scaffoldBackgroundColor: const Color.fromARGB(255, 250, 250, 250),
       ),
       initialRoute: HomeScreen.routeName,
       routes: routes,

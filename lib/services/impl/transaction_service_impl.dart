@@ -2,8 +2,7 @@ import 'package:manaze/dto/transaction_dto.dart';
 
 import 'package:manaze/models/transaction.dart';
 import 'package:manaze/repositories/transaction_repository.dart';
-
-import '../transaction_service.dart';
+import 'package:manaze/services/transaction_service.dart';
 
 class TransactionServiceImpl implements TransactionService {
   final TransactionRepository repo;

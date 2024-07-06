@@ -1,8 +1,7 @@
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:manaze/dto/transaction_dto.dart';
 import 'package:manaze/models/transaction.dart';
-
-import '../transaction_repository.dart';
+import 'package:manaze/repositories/transaction_repository.dart';
 
 class TransactionRepositoryImpl implements TransactionRepository {
   final Box<Transaction> database = Hive.box<Transaction>("transactions");
@@ -40,6 +39,8 @@ class TransactionRepositoryImpl implements TransactionRepository {
   List<Transaction> getTransactions(TransactionType? type) {
     return database.values
         .where((element) => type != null ? element.type == type : true)
+        .toList()
+        .reversed
         .toList();
   }
 
