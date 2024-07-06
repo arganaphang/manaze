@@ -2,6 +2,7 @@
 - [ ] (Setting) Color picker for color scheme
 - [ ] (Setting) Switch dark/light mode
 - [ ] (Setting) Export to CSV
+- [ ] (Setting) Auto Sync Google Sheet (???)
 - [ ] (List) Filter this month only
 - [ ] (List) Add link to `All` screen
 - [ ] (Chart) Add chart `Income` & `Expense`
