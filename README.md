@@ -25,4 +25,4 @@ Dependencies-nya liat `pubspec.yaml` aja lah ya :)
   > HELL YEAH dude
 
   - gua benci app ginian yang banyak ads nya, jadi gua buat 1 completely f\*cking free
-  - Nanti donate aja kalau mau support, atau langsung kontak creator/developernya aza~~~)
+  - Nanti donate aja kalau mau support (blom gua buatin link buat donatenya XD) atau langsung kontak creator/developernya aza~~~
